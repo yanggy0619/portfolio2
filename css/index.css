@@ -586,6 +586,7 @@ h2 {
 #cnt2 #tabpanel3 #who span {
   display: block;
   height: 216px;
+  padding-top: 85px;
 }
 
 #cnt3 {
