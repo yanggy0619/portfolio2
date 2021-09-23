@@ -45,7 +45,7 @@ h2 {
   top: 0;
   left: 0;
   background-color: #000;
-  opacity: 0.1;
+  opacity: 0.2;
   width: 100vw;
   height: 100vh;
 }
@@ -112,7 +112,6 @@ h2 {
 }
 
 #cnt2-1 .sticky .img_wrap {
-  position: relative;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   width: 100%;
@@ -136,6 +135,7 @@ h2 {
 }
 
 #cnt2-1 .sticky .deco_wrap {
+  position: relative;
   height: 100%;
   opacity: 0;
   visibility: hidden;
