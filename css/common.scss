@@ -1,0 +1,149 @@
+@charset "utf-8";
+@import  "_var", "_mixin", "_funcion";
+
+@font-face {
+    font-family: optima;
+    font-style: normal;
+    font-weight: 300;
+    src:
+        url("../fonts/OptimaNovaLTProLight.otf") format("opentype");
+  }
+  @font-face {
+    font-family: optima;
+    font-style: normal;
+    font-weight: 400;
+    src:
+        url("../fonts/OptimaNovaLTProRegular.otf") format("opentype");
+  }
+  @font-face {
+    font-family: optima;
+    font-style: normal;
+    font-weight: 500;
+    src:
+        url("../fonts/OptimaNovaLTProMedium.otf") format("opentype");
+  }
+  @font-face {
+    font-family: optima;
+    font-style: normal;
+    font-weight: 700;
+    src:
+        url("../fonts/OptimaNovaLTProBold.otf") format("opentype");
+  }
+  @font-face {
+    font-family: spoqa;
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/SpoqaHanSansNeo-Light.eot");
+    src: local("Noto Sans KR"),
+       url("../fonts/SpoqaHanSansNeo-Light.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/SpoqaHanSansNeo-Light.woff2") format("woff2"),
+       url("../fonts/SpoqaHanSansNeo-Light.woff") format("woff"),
+       url("../fonts/SpoqaHanSansNeo-Light.otf") format("opentype");
+  }
+  @font-face {
+    font-family: spoqa;
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/SpoqaHanSansNeo-Regular.eot");
+    src: local("Noto Sans KR"),
+       url("../fonts/SpoqaHanSansNeo-Regular.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/SpoqaHanSansNeo-Regular.woff2") format("woff2"),
+       url("../fonts/SpoqaHanSansNeo-Regular.woff") format("woff"),
+       url("../fonts/SpoqaHanSansNeo-Regular.otf") format("opentype");
+  }
+  @font-face {
+    font-family: spoqa;
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/SpoqaHanSansNeo-Medium.eot");
+    src: local("Noto Sans KR"),
+       url("../fonts/SpoqaHanSansNeo-Medium.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/SpoqaHanSansNeo-Medium.woff2") format("woff2"),
+       url("../fonts/SpoqaHanSansNeo-Medium.woff") format("woff"),
+       url("../fonts/SpoqaHanSansNeo-Medium.otf") format("opentype");
+  }
+  @font-face {
+    font-family: spoqa;
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/SpoqaHanSansNeo-Bold.eot");
+    src: local("Noto Sans KR"),
+       url("../fonts/SpoqaHanSansNeo-Bold.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2"),
+       url("../fonts/SpoqaHanSansNeo-Bold.woff") format("woff"),
+       url("../fonts/SpoqaHanSansNeo-Bold.otf") format("opentype");
+  }
+
+//tag reset
+body, h1, h2, h3, h4, h5, h6, p, ul, button, figure{margin: 0;padding: 0;}
+h1, h2, h3, h4, h5, h6{font-size: 100%;}
+ul{list-style: none;}
+a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit;}
+img{vertical-align: top;}
+button{border: none;background: none;cursor: pointer;}
+input[type="text"]{border: 1px solid #aaa;border-radius: 0;}
+button, input{font-family: inherit;font-size: inherit;color: inherit;}
+address{font-style: normal;}
+header, nav, section, footer, figure{display: block;}
+.blind{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+*{box-sizing: border-box;}
+body{font-family: spoqa;color: $gray;}
+
+.clickm{cursor: url(../images/cnt2/mouse1.png), auto;}
+
+html{scroll-behavior: smooth;}
+
+// effect 추가 
+.fade .fade_up, .fade .fade_down, .fade .fade_right, .fade .fade_left{
+  opacity: 0;-webkit-transition: opacity 1s;-moz-transition: opacity 1s;-o-transition: opacity 1s;transition: opacity 1s;-webkit-transition: transform 1s;-moz-transition: transform 1s;-o-transition: transform 1s;transition: transform 1s;
+}
+.fade{
+  .fade_up{transform: translate(0, 100px);}
+  .fade_down{transform: translate(0, -100px);}
+  .fade_right{transform: translate(-100px, 0);}
+  .fade_left{transform: translate(100px, 0);}
+}
+.fade.on .fade_up, .fade.on .fade_down, .fade.on .fade_right, .fade.on .fade_left{opacity: 1;transform: translate(0, 0);}
+.delay-3{transition-delay: 0.3s !important;}
+.delay-6{transition-delay: 0.6s !important;}
+.delay-9{transition-delay: 0.9s !important;}
+.delay-12{transition-delay: 1.2s !important;}
+.delay-15{transition-delay: 1.5s !important;}
+
+
+
+#dim{background: rgba(0, 0, 0, .5);position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 99;}
+
+#header{
+  @include flex;
+  @include justify-content(space-between);
+  @include align-items(center);
+  position: fixed;height: 80px;width: 100%;z-index: 100;padding: 0 60px;
+  .logo{
+     img{width: 50px;}
+  }
+  .gnb{
+    color: $blue;
+    ul{
+      @include flex;
+      li{
+        margin-left: 40px;
+        &:hover, &:focus{border-bottom: 1px solid $blue;}
+      }
+    }
+  }
+      
+      
+}
+
+
+#footer{
+  position: relative;height: 200px;width: 100%;/* background-color: $pink; */
+  text-align: center;
+  h5{
+    @include translateX-50;
+    position: absolute;top: -30px;left: 50%;font-size: 50px;color: $Rbrwn;
+  } 
+  p{color: $blue;font-size: 30px;padding: 60px 0 25px 0;}
+  a:hover img,a:focus img{transform: rotate(10deg);}
+}
