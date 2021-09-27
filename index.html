@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/skill.css">
   <script src="js/jquery-1.12.4.min.js"></script>
-  <script src="js/common.js"></script>
+  <script src="js/gsap.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/skill.js"></script>
   
@@ -24,8 +24,8 @@
       <h1 class="logo"><a href="index.html"><div><img src="images/cnt1/logo.svg" alt=""></a></h1>
       <nav class="gnb">
         <h2 class="blind">주메뉴</h2>
-        <ul>
-          <li><a href="#cnt2-1"">ABOUT ME</a></li>
+        <ul class="on">
+          <li><a href="#cnt2-1">ABOUT ME</a></li>
           <li><a href="#cnt3">SKILL</a></li>
           <li><a href="#cnt4">PROJECT</a></li>
           <li><a href="#footer">CONTACT</a></li>
@@ -155,10 +155,10 @@
             </div>
             <div role="tabpanel" aria-labelledby="tab3" id="tabpanel3" class="tabpanel">
             <div id="who">
-              <div class="fade">
-                <p class="fade_up delay-6">성장하는</p>
-                <p class="fade_up delay-12">소통을 잘하는</p>
-                <p class="fade_up delay-15">웹표준을 준수하는</p>
+              <div>
+                <p>성장하는</p>
+                <p>소통을 잘하는</p6>
+                <p>웹표준을 준수하는</p>
               </div>
               <div>
                 <span class="move">웹퍼블리셔가 되겠습니다.</span>
@@ -322,65 +322,74 @@
         </div>
       </div>
     </section>
+   
     <section id="cnt4">
       <div class="txt_box">
         <h2>PROJECT</h2>
         <p>저의 프로젝트를 소개해드립니다.</p>
       </div>
-      <div class="project1">
-        <div class="bg">
-          <a class="clickm" href="sub/project.html">
-            <div class="bg_img">
-              <div class="txt">
-               <h4>SULWHASOO</h4>
+      <div class="project_wrap">
+        <div class="sticky">
+          <div class="hor_long">
+            <div class="project">
+              <div class="sulwhasoo">
+                <div class="bg"></div>
+                <div class="txt_wrap">
+                  <strong>sulwhasoo project</strong>
+                  <p>design, publishing / 2021</p>
+                  <a href="sub/project.html">VIEW MORE</a>
+                </div>
               </div>
-              <img src="images/cnt4/yoonjo.png" alt="" class="product">
-            </div>
-          </a>
-          <div class="next">
-            <button type="button">
-              <img src="images/cnt4/button.png" alt="">
-            </button>
-            <div class="next_text">
-              <span>N</span>
-              <span>E</span>
-              <span>X</span>
-              <span>T</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="project2">
-        <div class="bg">
-          <a class="clickm" href="sub/project.html#project2">
-            <div class="bg_img">
-              <div class="txt">
-                <h4>NESPRESSO</h4>
+              <div class="nespresso">
+                <div class="bg"></div>
+                <div class="txt_wrap">
+                  <strong>nespresso project</strong>
+                  <p>design, publishing / 2021</p>
+                  <a href="sub/project.html#project2">VIEW MORE</a>
+                </div>
               </div>
-              <img src="images/cnt4/LattissimaOneSilky.png" alt="" class="product">
-            </div>
-          </a>
-          <div class="prev">
-            <button type="button">
-              <img src="images/cnt4/button_prev.png" alt="">
-            </button>
-            <div class="prev_text">
-              <span>P</span>
-              <span>R</span>
-              <span>E</span>
-              <span>V</span>
+              <div class="portfolio">
+                <div class="bg"></div>
+                <div class="txt_wrap">
+                  <strong>My portfolio</strong>
+                  <p>design, publishing / 2021</p>
+                  <a href="index.html">VIEW MORE</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+   
     <footer id="footer">
       <div class="contact">
-        <h5>CONTACT</h5>
-        <p>LET'S WORK TOGETHER</p>
-        <a href="mailto:did-619@naver.com" title="mailme" class="mailme"><img src="images/cnt5/mail.png" alt=""></a>
+        
+        <div class="contact_left">
+          <div class="logo"></div>
+          <p>Web publisher</p>
+          <p>&copy;GaYoung Yang</p>
+        </div>
+
+        <div class="contact_center">
+          <ul>
+            <li><a href="#cnt2-1">ABOUT ME</a></li>
+            <li><a href="#cnt3">SKILL</a></li>
+            <li><a href="#cnt4">PROJECT</a></li>
+            <li><a href="#footer">CONTACT</a></li>
+          </ul>
+        </div>
+
+        <div class="contact_right">
+          <div class="top">
+            <a>Back to top</a>
+          </div>
+          <h3>CONTACT ME :</h3>
+          <a href="mailto:did-619@naver.com" title="mailme" class="mailme">did-619@naver.com</a>
+          
+        </div>
+        
       </div>
-      <div class="scrollTop"></div>
     </footer>
   </div>
 </body>

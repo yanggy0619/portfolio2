@@ -11,10 +11,10 @@ h2{font-family: optima;font-size: 50px;color: $Rbrwn;}
 #cnt2, #cnt3, #cnt4{padding-top: 200px;}
 
 #cnt1{
-  position: relative;height: 120vh;font-family: optima;
+  position: relative;height: 120vh;font-family: optima;overflow: hidden;
 
   .bg_img{
-    clip-path: circle(20%);transition: clip-path 1s;background: $pink;
+    clip-path: circle(20%);transition: clip-path 2.5s;background: $pink;
     &.active{clip-path: circle(100%);}
     &.active::after{content: "";position: absolute;top: 0;left: 0;background-color: #000;opacity: 0.2;width: 100vw;height: 100vh;}
     img{width: 100vw;height: 100vh;}
@@ -93,9 +93,9 @@ h2{font-family: optima;font-size: 50px;color: $Rbrwn;}
 #cnt2{
   position: relative;overflow: hidden;
   #cnt2_bg{
-    position: relative;width: 100%;height: 650px;background-color: #F2F5F5;
+    position: relative;width: 100%;height: 650px;background-color: #e6f1f4;
     &::after{
-      content:"";position: absolute;top: -120px;left: 0;background: url(../images/cnt2/wave.jpg) repeat-x;width: 200%;height: 120px;animation: wave 5s ease infinite;
+      content:"";position: absolute;top: -120px;left: 0;background: url(../images/cnt2/wave.png) repeat-x;width: 200%;height: 120px;animation: wave 5s ease infinite;
     }
   }
   @keyframes wave {
@@ -278,21 +278,50 @@ h2{font-family: optima;font-size: 50px;color: $Rbrwn;}
   }
 }
 
-#cnt4{
-  position: relative;height: 150vh;font-weight: 300;
+// #cnt4{
+//   position: relative;height: 150vh;font-weight: 300;
 
-    .bg_img{
-      @include translateY-50;
-      position: relative;position: absolute;top: 50%;right: 0;width: 902px;height: 880px;
-      .txt{
-        position: absolute;top: 40%;left: 25%;font-size: 100px;
-      }
-      img{
-        @include translateY-50;
-        position: absolute;top: 50%;right: 0;
-      }
-    }
+//     .bg_img{
+//       @include translateY-50;
+//       position: relative;position: absolute;top: 50%;right: 0;width: 902px;height: 880px;
+//       .txt{
+//         position: absolute;top: 40%;left: 25%;font-size: 100px;
+//       }
+//       img{
+//         @include translateY-50;
+//         position: absolute;top: 50%;right: 0;
+//       }
+//     }
+//   }
+
+#cnt4{
+  .project_wrap{height: calc(3000px - 70vh);} /* sticky 속성 하단 컨텐츠가 빨리 올라올수 있도록 제어 */
+  .sticky{
+    position: sticky;top: 0;width: 100%;height: 100vh;overflow: hidden;
   }
+  .hor_long{
+    position: absolute;top: 0;left: 0;width: 4320px;height: 100vh;margin-top: 200px;
+    .project{
+      display: flex;height: 100%;height: 100vh;
+      > div{position: relative;width: 500px;height: 500px;margin-left: 250px;box-shadow: 2px 1px 8px gray;;}
+      .sulwhasoo{background: rgba(203, 209, 202, .5) url(../images/cnt4/yoonjo.png) no-repeat center;}
+      .nespresso{background: rgba(203, 209, 202, .5) url(../images/cnt4/nespresso.png) no-repeat center;}
+      .portfolio{background: rgba(203, 209, 202, .5) url(../images/cnt4/portfolio.png) no-repeat center;}
+    
+      
+      .bg{width: 100%;height: 100%;background: $white;opacity: 0;transition: opacity 0.5s;}
+      .txt_wrap{
+        position:absolute;top: 180px;right: 0;padding-right: 100px;opacity: 0;transition: opacity 1s;
+        &::after{content:"";position:absolute;top: 45px;left: 0;width: 100%;border-bottom: 1px solid $blue;}
+        strong{font-size: 30px;color: $blue;}
+        p{font-size: 14px;padding: 20px 0 10px;font-size: 14px;color: $gray;}
+        a{font-size: 12px;background: $pink;padding: 5px;color: $white;}
+      }
+      > div:hover .txt_wrap, > div:focus .txt_wrap{opacity: 1;}
+      > div:hover .bg, > div:focus .bg{opacity: 0.8;}
+    }
+   }
+}
 
   .project1{
     .bg_img{background: url(../images/cnt4/sulwhasoo_bg.png);}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .txt_box {
   padding-left: 200px;
 }
@@ -22,15 +23,16 @@ h2 {
   position: relative;
   height: 120vh;
   font-family: optima;
+  overflow: hidden;
 }
 
 #cnt1 .bg_img {
   -webkit-clip-path: circle(20%);
           clip-path: circle(20%);
-  -webkit-transition: -webkit-clip-path 1s;
-  transition: -webkit-clip-path 1s;
-  transition: clip-path 1s;
-  transition: clip-path 1s, -webkit-clip-path 1s;
+  -webkit-transition: -webkit-clip-path 2.5s;
+  transition: -webkit-clip-path 2.5s;
+  transition: clip-path 2.5s;
+  transition: clip-path 2.5s, -webkit-clip-path 2.5s;
   background: #EBCBC0;
 }
 
@@ -252,7 +254,7 @@ h2 {
   position: relative;
   width: 100%;
   height: 650px;
-  background-color: #F2F5F5;
+  background-color: #e6f1f4;
 }
 
 #cnt2 #cnt2_bg::after {
@@ -260,7 +262,7 @@ h2 {
   position: absolute;
   top: -120px;
   left: 0;
-  background: url(../images/cnt2/wave.jpg) repeat-x;
+  background: url(../images/cnt2/wave.png) repeat-x;
   width: 200%;
   height: 120px;
   -webkit-animation: wave 5s ease infinite;
@@ -739,35 +741,113 @@ h2 {
 }
 
 #cnt4 {
+  /* sticky 속성 하단 컨텐츠가 빨리 올라올수 있도록 제어 */
+}
+
+#cnt4 .project_wrap {
+  height: calc(3000px - 70vh);
+}
+
+#cnt4 .sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#cnt4 .hor_long {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4320px;
+  height: 100vh;
+  margin-top: 200px;
+}
+
+#cnt4 .hor_long .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  height: 100vh;
+}
+
+#cnt4 .hor_long .project > div {
   position: relative;
-  height: 150vh;
-  font-weight: 300;
+  width: 500px;
+  height: 500px;
+  margin-left: 250px;
+  -webkit-box-shadow: 2px 1px 8px gray;
+          box-shadow: 2px 1px 8px gray;
 }
 
-#cnt4 .bg_img {
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  position: relative;
+#cnt4 .hor_long .project .sulwhasoo {
+  background: rgba(203, 209, 202, 0.5) url(../images/cnt4/yoonjo.png) no-repeat center;
+}
+
+#cnt4 .hor_long .project .nespresso {
+  background: rgba(203, 209, 202, 0.5) url(../images/cnt4/nespresso.png) no-repeat center;
+}
+
+#cnt4 .hor_long .project .portfolio {
+  background: rgba(203, 209, 202, 0.5) url(../images/cnt4/portfolio.png) no-repeat center;
+}
+
+#cnt4 .hor_long .project .bg {
+  width: 100%;
+  height: 100%;
+  background: #F6F4F4;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+#cnt4 .hor_long .project .txt_wrap {
   position: absolute;
-  top: 50%;
+  top: 180px;
   right: 0;
-  width: 902px;
-  height: 880px;
+  padding-right: 100px;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
 
-#cnt4 .bg_img .txt {
+#cnt4 .hor_long .project .txt_wrap::after {
+  content: "";
   position: absolute;
-  top: 40%;
-  left: 25%;
-  font-size: 100px;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #7D9BA8;
 }
 
-#cnt4 .bg_img img {
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  position: absolute;
-  top: 50%;
-  right: 0;
+#cnt4 .hor_long .project .txt_wrap strong {
+  font-size: 30px;
+  color: #7D9BA8;
+}
+
+#cnt4 .hor_long .project .txt_wrap p {
+  font-size: 14px;
+  padding: 20px 0 10px;
+  font-size: 14px;
+  color: #707070;
+}
+
+#cnt4 .hor_long .project .txt_wrap a {
+  font-size: 12px;
+  background: #EBCBC0;
+  padding: 5px;
+  color: #F6F4F4;
+}
+
+#cnt4 .hor_long .project > div:hover .txt_wrap, #cnt4 .hor_long .project > div:focus .txt_wrap {
+  opacity: 1;
+}
+
+#cnt4 .hor_long .project > div:hover .bg, #cnt4 .hor_long .project > div:focus .bg {
+  opacity: 0.8;
 }
 
 .project1 .bg_img {

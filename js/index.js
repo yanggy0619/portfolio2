@@ -1,13 +1,7 @@
 $(document).ready(function() {
-  // menu를 클릭하는 경우
-    $('.gnb  ul li a').on('click', function (e) {
-        e.preventDefault();
-        $('.btn').click();
-        const $tg = $($(this).attr('href'));
-        $('html, body').stop().animate({scrollTop: $tg.offset().top});
-    });
     
-    //#cnt2-1
+
+    //#cnt2-1 장식요소들
     let currentX = '';
     let currentY = '';
     const moveDis = 0.01;
@@ -33,11 +27,10 @@ $(document).ready(function() {
     });
 
     $(window).scroll(function () {
+      //#cnt2-1
       $('.bg_img').addClass('active');
       $('.txt').addClass('active');
-    });
 
-    $(window).on('scroll', function () {
       const scrollTop = $(this).scrollTop();
         // #cnt2-1 창열리기 sticky로 제어
         if (scrollTop >= $('#cnt2-1').offset().top && scrollTop < $('#cnt2-1').offset().top + 1200) {
@@ -46,7 +39,24 @@ $(document).ready(function() {
         else {
             $('#cnt2-1').removeClass('on');
         }
-        $(window).trigger('scroll');
+
+      //#cnt4
+      const $project_wrap = $('.project_wrap');
+      const projectwrapY = $project_wrap.offset().top;  //.project_wrap 상단 브라우저에서 떨어진 거리
+      const projectwrapHei = $project_wrap.outerHeight(); //.project_wrap 세로 높이(border 포함)
+      // console.log(projectwrapY, projectwrapHei);  //2100, 3666
+      const scrollY = $(this).scrollTop();    //스크롤바 이동거리
+      const leftMove = scrollY - projectwrapY; // absolute를 가지는 .hor_long의 left좌표
+      console.log(scrollY);
+
+      if (scrollY < projectwrapY - $(window).height()/10) {  //.cnt_top이 보여지는 동안: left 0고정, 스크롤을 빨리 움직이는 사용자 때문에 조금만 빨리 animate()
+        /* gsap.to('#box', {rotation: 27, x: 100, duration: 1});
+        첫 번째 파라미터는 트윈 할 대상(Target)
+        두 번째 속성(Properties) */
+        gsap.to('.hor_long', {left: 0, duration: 0.5, ease: Power3.easeOut});
+      } else if (scrollY < projectwrapY + projectwrapHei - $(window).height()) { //.cnt_btm이 보이지 전 : left=> 스크롤바의 이동거리-.sticky_wrap의수직위치
+        gsap.to('.hor_long', {left: -leftMove, duration: 0.5, ease: Power3.easeOut});
+      }  
     });
   
 
@@ -114,24 +124,7 @@ $(document).ready(function() {
           $tgPanel.addClass('on').attr({tabIndex: 0, 'aria-hidden': false}).siblings('.tabpanel').removeClass('on').attr({tabIndex: -1, 'aria-hidden': true});
         });
   
-  // #cnt2 who am i?
-    const scroll = $(this).scrollTop();
-      $(window).scroll(function(){
-        const contentHei = $('.move').height();
-        const scrollPo = $(window).scrollTop();
-        console.log(scrollPo, contentHei);
-        if (scrollPo > contentHei) {
-          $('.move').stop();
-        }else{
-          $('.move').stop().animate({'top': scrollPo +'px'});
-        }
-      });
 
-
-        
-      
-
-     
 
     // #cnt3
     const $acdn = $('#cnt3 .accordion')
@@ -168,16 +161,17 @@ $(document).ready(function() {
     })
 
 
-    // #cnt4
-    $('.project2').hide();
- $('#cnt4 .next').click('on', function () {
-        $(this).parents('.project1').fadeOut().siblings('.project2').fadeIn();
-    });
 
-    $('#cnt4 .prev').click('on', function () {
-      $(this).parents('.project2').fadeOut().siblings('.project1').fadeIn();
-  });
-    // $('#cnt4 .prev').click('on', function () {
-    //     $(this).parents('.project2').css({visibility: 'hidden', overflow: 'hidden', maxHeight: 0}).prev().css({visibility: 'visible', maxHeight: 5000})
-    // });
+
+
+    // top 이동 버튼
+	$(".top").on("click", function () {
+		$("html, body").stop().animate({scrollTop: 0});
+		return false;
+	});
+
+
+
 });
+
+  

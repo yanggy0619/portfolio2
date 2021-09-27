@@ -8,22 +8,12 @@
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/sub.css">
   <script src="../js/jquery-1.12.4.min.js"></script>
-  <script src="../js/common.js"></script>
   <script src="../js/sub.js"></script>
 </head>
 <body>
   <div id="wrap">
     <header id="header">
       <h1 class="logo"><a href="../index.html"><div><img src="../images/cnt1/logo.svg" alt=""></a></h1>
-      <nav class="gnb">
-        <h2 class="blind">주메뉴</h2>
-        <ul>
-          <li><a href="../#cnt2-1"">ABOUT ME</a></li>
-          <li><a href="../#cnt3">SKILL</a></li>
-          <li><a href="../#cnt4">PROJECT</a></li>
-          <li><a href="../#footer">CONTACT</a></li>
-        </ul>
-      </nav>
     </header>
 
       <div class="cursor" id='cursor1'></div>
@@ -243,12 +233,53 @@
 
     <footer id="footer">
       <div class="contact">
-        <h5>CONTACT</h5>
-        <p>LET'S WORK TOGETHER</p>
-        <a href="mailto:did-619@naver.com" title="mailme" class="mailme"><img src="../images/cnt5/mail.png" alt=""></a>
+        
+        <div class="contact_left">
+          <div class="logo"></div>
+          <p>Web publisher</p>
+          <p>&copy;GaYoung Yang</p>
+        </div>
+
+        <div class="contact_center">
+          <ul>
+            <li><a href="../index.html#cnt2-1">ABOUT ME</a></li>
+            <li><a href="../index.html#cnt3">SKILL</a></li>
+            <li><a href="#../index.html#cnt4">PROJECT</a></li>
+            <li><a href="#footer">CONTACT</a></li>
+          </ul>
+        </div>
+
+        <div class="contact_right">
+          <div class="top">
+            <a>Back to top</a>
+          </div>
+          <h3>CONTACT ME :</h3>
+          <a href="mailto:did-619@naver.com" title="mailme" class="mailme">did-619@naver.com</a>
+          
+        </div>
+        
       </div>
     </footer>
   </div>
+
+  <script>
+    $(document).ready(function () {
+      //서브페이지 : fade effect
+      // 1) scroll 이벤트 선언
+      $(window).on('scroll', function () {
+        // 2) 스크롤바의 수직이동거리를 변수에 저장(스크롤을 빨리 움직이는 사용자를 위해 값을 더해주기)
+        const scrollY = $(this).scrollTop() + $(this).height();
+
+        // 3) 스크롤바의 수직이동거리와 나(보여질 컨텐츠)의 위치가 가까워질 경우만 .fade.on클래스명 추가
+        $('.fade').each(function () {
+          if(scrollY > $(this).offset().top) $(this).addClass('on');
+          // 하단에서 상단으로 다시 올렸을때 효과가 반복되길 바란다면 추가 
+          else $(this).removeClass('on');
+        });
+
+     });
+   });
+  </script>
 
   
 </body>
