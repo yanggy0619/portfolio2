@@ -85,7 +85,7 @@ strong {
   color: #B08069;
   font-family: optima;
   font-size: 30px;
-  padding: 50px 0;
+  padding-top: 50px;
 }
 
 #project1 .width1440 {
@@ -215,8 +215,9 @@ strong {
   width: 100%;
 }
 
-#project1 .index .index_content img {
+#project1 .index .index_content > img {
   width: 50%;
+  height: 1650px;
 }
 
 #project1 .index .index_content .index_intro {

@@ -313,10 +313,15 @@ body {
 }
 
 #header .gnb ul li {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-#header .gnb ul.on li {
+#header .gnb ul a:hover, #header .gnb ul a:focus {
+  color: #7D9BA8;
+  font-weight: 600;
+}
+
+#header .gnb ul li.on {
   color: #7D9BA8;
   font-weight: 600;
 }

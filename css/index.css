@@ -29,10 +29,10 @@ h2 {
 #cnt1 .bg_img {
   -webkit-clip-path: circle(20%);
           clip-path: circle(20%);
-  -webkit-transition: -webkit-clip-path 2.5s;
-  transition: -webkit-clip-path 2.5s;
-  transition: clip-path 2.5s;
-  transition: clip-path 2.5s, -webkit-clip-path 2.5s;
+  -webkit-transition: -webkit-clip-path 1s;
+  transition: -webkit-clip-path 1s;
+  transition: clip-path 1s;
+  transition: clip-path 1s, -webkit-clip-path 1s;
   background: #EBCBC0;
 }
 
@@ -183,7 +183,7 @@ h2 {
 
 #cnt2-1 .sticky .deco_wrap .deco3 {
   top: 8%;
-  right: 5%;
+  right: 10%;
 }
 
 #cnt2-1 .sticky .deco_wrap .deco4 {

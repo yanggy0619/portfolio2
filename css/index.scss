@@ -14,7 +14,7 @@ h2{font-family: optima;font-size: 50px;color: $Rbrwn;}
   position: relative;height: 120vh;font-family: optima;overflow: hidden;
 
   .bg_img{
-    clip-path: circle(20%);transition: clip-path 2.5s;background: $pink;
+    clip-path: circle(20%);transition: clip-path 1s;background: $pink;
     &.active{clip-path: circle(100%);}
     &.active::after{content: "";position: absolute;top: 0;left: 0;background-color: #000;opacity: 0.2;width: 100vw;height: 100vh;}
     img{width: 100vw;height: 100vh;}
@@ -68,7 +68,7 @@ h2{font-family: optima;font-size: 50px;color: $Rbrwn;}
       .mouseM{position: absolute;}
       .deco1{bottom: 40%;left: 20%;}
       .deco2{bottom: 30%;left: 10%;}
-      .deco3{top: 8%;right: 5%;}
+      .deco3{top: 8%;right: 10%;}
       .deco4{bottom: 25%;right: 20%;}
     }
     

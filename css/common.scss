@@ -159,9 +159,10 @@ body{background: $white url(../images/background.png);animation: noise 7s steps(
   .gnb{
     ul{
       position: absolute;top: 40px;left: 60px;
-      li{padding-bottom: 10px;}
+      li{margin-bottom: 10px;}
+      a:hover, a:focus{color: $blue;font-weight: 600;}
+      li.on{color:$blue;font-weight: 600;}
     }
-    ul.on li{color: $blue;font-weight: 600;}
     
 
   }

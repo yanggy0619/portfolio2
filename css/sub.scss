@@ -30,7 +30,7 @@ strong{padding: 50px;text-decoration: underline;font-size: 40px;}
 
 #project1{
 
-h3{color: $Rbrwn;font-family: optima;font-size: 30px;padding: 50px 0;}
+h3{color: $Rbrwn;font-family: optima;font-size: 30px;padding-top: 50px;}
 .width1440{width: 1440px;margin: 0 auto;}
 
 
@@ -80,7 +80,7 @@ h3{color: $Rbrwn;font-family: optima;font-size: 30px;padding: 50px 0;}
     .index_content{
         @include flex;
         width: 100%;
-        img{width: 50%;}
+        > img{width: 50%;height: 1650px;}
         .index_intro{
             width: 50%;height: 100%;
             .bg{

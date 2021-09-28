@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    
-
     //#cnt2-1 장식요소들
     let currentX = '';
     let currentY = '';
@@ -57,6 +55,21 @@ $(document).ready(function() {
       } else if (scrollY < projectwrapY + projectwrapHei - $(window).height()) { //.cnt_btm이 보이지 전 : left=> 스크롤바의 이동거리-.sticky_wrap의수직위치
         gsap.to('.hor_long', {left: -leftMove, duration: 0.5, ease: Power3.easeOut});
       }  
+
+
+      //gnb
+     if (scrollY >= $('#cnt2-1').offset().top) $('.gnb li:first-child').addClass('on')
+     else if (scrollY < $('#cnt2-1').offset().top) $('.gnb li:first-child').removeClass('on');
+
+     if (scrollY >= $('#cnt3').offset().top) $('.gnb li:nth-child(2)').addClass('on')
+     else if (scrollY < $('#cnt3').offset().top) $('.gnb li:nth-child(2)').removeClass('on');
+
+     if (scrollY >= $('#cnt4').offset().top) $('.gnb li:nth-child(3)').addClass('on')
+     else if (scrollY < $('#cnt4').offset().top) $('.gnb li:nth-child(3)').removeClass('on');
+
+     if ($(window).scrollTop() == $(document).height() - $(window).height()) $('.gnb li:nth-child(4)').addClass('on')
+     else $('.gnb li:nth-child(4)').removeClass('on');
+
     });
   
 
@@ -65,20 +78,20 @@ $(document).ready(function() {
 
 
     // #cnt2
-        //  1) 첫번째 .tab과 .tabpanel 활성화 (클래스 추가, tabIndex 0) / aria의 state 초기 설정
-        // :first-of-type 필터선택자는 같은 부모에서 동일한 타입을 가진 자식중에 첫번째
-        $('#cnt2 .tab:first-of-type, #cnt2 .tabpanel:first-of-type').addClass('on').attr({tabIndex: 0});
-        $('#cnt2 .tab:first-of-type').attr({'aria-selected': false}).siblings().attr({'aria-selected': true});
-        $('#cnt2 .tabpanel:first-of-type').attr({'aria-hidden': false}).siblings('.tabpanel').attr({'aria-hidden': true});
+    //  1) 첫번째 .tab과 .tabpanel 활성화 (클래스 추가, tabIndex 0) / aria의 state 초기 설정
+    // :first-of-type 필터선택자는 같은 부모에서 동일한 타입을 가진 자식중에 첫번째
+    $('#cnt2 .tab:first-of-type, #cnt2 .tabpanel:first-of-type').addClass('on').attr({tabIndex: 0});
+    $('#cnt2 .tab:first-of-type').attr({'aria-selected': false}).siblings().attr({'aria-selected': true});
+    $('#cnt2 .tabpanel:first-of-type').attr({'aria-hidden': false}).siblings('.tabpanel').attr({'aria-hidden': true});
       
-        // 2) 키보드 제어 - tab(9), 이전방향키(37), 다음방향키(39), home(36), end(35), enter(13)/spacebar(32)
-        $('#cnt2 .tab').on('keydown', function (e) {
-          const key = e.keyCode;
-          console.log(key);
-          switch (key) {
-            case 37:  //이전 방향키
-              // 나자신의 포커스 제거
-              $(this).attr({tabIndex: -1});
+    // 2) 키보드 제어 - tab(9), 이전방향키(37), 다음방향키(39), home(36), end(35), enter(13)/spacebar(32)
+    $('#cnt2 .tab').on('keydown', function (e) {
+      const key = e.keyCode;
+      console.log(key);
+      switch (key) {
+          case 37:  //이전 방향키
+          // 나자신의 포커스 제거
+          $(this).attr({tabIndex: -1});
               // if (만약 내가 .first라는 클래스명을 가졌다면) .last로 포커스 보내기
               // else 이전 li를 찾아서 포커스 보내기
               if ($(this).is('.first')) {
