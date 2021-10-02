@@ -19,11 +19,9 @@ h2{font-family: optima;font-size: 50px;color: $Rbrwn;}
     &.active::after{content: "";position: absolute;top: 0;left: 0;background-color: #000;opacity: 0.2;width: 100vw;height: 100vh;}
     img{width: 100vw;height: 100vh;}
   }
-  .sticky{
-    position: sticky;top: 0;left: 0;
-  }
+  
   .txt{
-    color: $blue;
+    color: $blue;transition: color 2s;
     &.active{color: #fff;}
     .txt_wrap{
       @include translate-50;
@@ -38,13 +36,8 @@ h2{font-family: optima;font-size: 50px;color: $Rbrwn;}
     .txt_bottom{
       @include translateX-50;
       position: absolute;bottom: 25%;left: 50%;
-
     }
   }
-
-
- 
-
 }
 
 #cnt2-1{

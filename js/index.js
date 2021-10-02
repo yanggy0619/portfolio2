@@ -25,12 +25,27 @@ $(document).ready(function() {
     });
 
     $(window).scroll(function () {
-      //#cnt2-1
-      $('.bg_img').addClass('active');
-      $('.txt').addClass('active');
 
+      
+
+
+
+
+      
       const scrollTop = $(this).scrollTop();
-        // #cnt2-1 창열리기 sticky로 제어
+
+        // #cnt1
+        if (scrollTop > $('#cnt1').offset().top) {
+          $('.bg_img').addClass('active');
+          $('.txt').addClass('active');
+        } 
+        else if(scrollTop < $('#cnt1').offset().top + 1000) {
+          $('.bg_img').removeClass('active');
+          $('.txt').removeClass('active');
+        }
+
+
+        // #cnt2-1
         if (scrollTop >= $('#cnt2-1').offset().top && scrollTop < $('#cnt2-1').offset().top + 1200) {
             $('#cnt2-1').addClass('on');
         } 

@@ -57,15 +57,10 @@ h2 {
   height: 100vh;
 }
 
-#cnt1 .sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
-}
-
 #cnt1 .txt {
   color: #7D9BA8;
+  -webkit-transition: color 2s;
+  transition: color 2s;
 }
 
 #cnt1 .txt.active {
